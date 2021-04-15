@@ -1,0 +1,113 @@
+========= Sigleton  =======
+
+Vấn Đề:
+
+	Đối tượng được khởi tạo nhiều lần 
+	Tiêu tốn tài nguyên
+
+Phương pháp: 
+
+	Dung singleton giúp:
+		hạn chế khởi tạo của lớp đối tượng
+		code sạch 
+		gọn
+		sử dụng ít tài nguyên
+		có thể dùng mọi luc mọi nơi
+
+Ví dụ:
+	
+	nếu đối tượng đã tồn tại thì tái sử dụng
+	đã tồn tài thì tái sử dụng
+
+========== Factory =============
+
+Vấn đề:
+	khởi tạo thông thường
+	
+	+ Tăng sự phụ thuộc giữa các module
+	, các logic với các class cụ thể.
+	
+Phương Pháp:
+	
+	khởi tạo thông qua interface
+
+	che giấu xử lí logic của việc khởi tạo
+
+	giảm sự phụ thuộc giữa các module, các logic với các class thực thể 
+	mà chỉ phục thuộc vào interface vs abstract class
+
+	dễ dàng mở rộng
+
+Ví dụ:
+
+	có thể thấy có 3 class circle ,square ,Rectangle đều kế thừa từ class Shape
+	các phương thức của shape cx được override, nó chung phương thức nhưng được
+	nghĩa khác nhau. class shapeFactory được hiểu như là cửa hàng
+	factoryPattern là học sinh 	
+	trong của hàng có 3 hình dạng học sinh muốn hình dạng nào thì cửa hàng sẽ
+	cung cấp hình dạng ấy
+
+============ OOD Principles ========
+
+	Object Oriented Design Principles: thiết kế hướng đối tượng
+===== Single Responsibility : trách nhiệm đơn lẻ ===========
+	vấn đề: 
+		hình bên trái có quá nhiều ngành nghề
+	phương pháp: 
+		được chia nhỏ
+	ưu điểm: 
+		code sạch
+		dễ dàng quản lý
+		tránh các lỗi phát sinh do thay đổi
+		không gây ảnh hưởng các hành vi khác
+
+====== Close open : nguyên tắc đóng mở =============
+	mở khi mở rộng đóng khi thay đổi
+
+	vấn đề: khi thêm 1 chức năng sơn mới mà bạn thay đỗi chức năng cut hiện tại
+	thì sẽ ảnh hưởng sẽ ảnh hưởng các chức năng còn lại của hệ thống
+	
+	phương pháp:
+	
+	nguyên tắc này nhằm mục đích mở rộng hành vi của lớp mà không thây đổi hành vi
+	hiện tại lớp đó. điều này là để trách gây ra lỗi ở bất cứ nơi nào class đang 
+	sử dụng
+
+======== Liskov Substitution: nguyên tắc thay thế Liskov ============
+	nếu S là kế thừa T thì các đối tượng kiểu T có thể được thay thế bằng các 
+	đối tượng S mà không làm thay đổi bất kỳ thuộc tính nào
+
+	VD: Sam có 1 phương thức giao cà phê
+	Eden kế thừa Sam và override phương thức giao cà phê
+	Eden sẽ có thể thay thế Sam mang cà phê mà vẫn không thay đổi thuộc tính
+	hình X Eden không có phương thức giao cà phê từ lớp cha là Sam nên vi phạm nguyên tắc
+	Hình V Eden có phương thức giao cà phê của lớp cha có thể thay thế lớp cha
+	
+	ưu điểm: 
+	Nhằm thực thi tính nhất quán để lớp cha vs lớp con có thể được sử dụng theo cùng
+	một cách mà không có bất kỳ lỗi nào
+
+========= interface Segregation =======
+	không nên bị phục thuộc vào các phương pháp không sử dụng
+	
+	vấn đề: Khi lớp được yêu cầy thược hiện các hành dộng không hữu ích, sẽ
+	lãng phí và có thể tạo ra lỗi không mong muốn nếu lớp không có khả năng 
+	thực hiện các hành động đó.
+	
+	phương pháp: nhằm tách một tập hợp các hành động thành các tập hợp
+	nhỏ hơn để một lớp chỉ thực hiện các hành động mà nó yêu cầu
+
+========== Dependency inversion =============
+	các module cấp cao không phụ thuộc vào các module cấp thấp cả 2
+	nên phụ thuộc vào lớp trừu tượng
+	
+	các lớp giao tiếp với nhau thông qua lớp trừu tượng
+
+	phương pháp:
+	nhằm mục đích giảm sự phụ thuộc của Lớp cấp cao vào Lớp cấp thấp bằng cách
+	giới thiệu một giao diện.
+
+		===========================================================		
+	
+
+	  
