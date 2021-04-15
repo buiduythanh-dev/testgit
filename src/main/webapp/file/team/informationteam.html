@@ -1,0 +1,48 @@
+<div class="employee-detail">
+	<a href="#!team" class="btn-back"> <i
+		class="fas fa-arrow-left mr-2"></i> Back
+	</a>
+
+	<div class="team__infor-body">
+		<div class="row">
+			<div class="col-sm-4 d-flex justify-content-center detail__infor">
+				<div class="employee-detail__img text-center">
+					<div class="employee-detail__img">
+						<label for="image"> <input type="file" custom-file-input
+							accept="image/x-png,image/gif,image/jpeg" name="image"
+							ng-model="eachUser.image" id="image" style="display: none;" /> <img
+							src="template/static/images/employee/{{infornameitem.image}}">
+						</label>
+					</div>
+					<h4 class="employee-detail__name pt-3 font-weight-bolder">{{infornameitem.name}}</h4>
+					<div class="d-flex align-items-center justify-content-center">
+						<h5 class="employee-detail__nameRole m-0 text-danger">{{infornameitem.nameRole}}</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="wrap__table">
+					<div class="">
+						<table class="table__default">
+							<thead>
+								<tr class="infer__tr">
+									<td class="infer__th">Name</td>
+									<td class="infer__th">Position</td>
+									<td class="infer__th">experience</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in infornames.users" class="infor__tr"
+									ng-click="informationitem(item.id)">
+									<td class="infor__td">{{item.name}}</td>
+									<td class="infor__td">{{item.posiTion}}</td>
+									<td class="infor__td">{{item.exPe}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
